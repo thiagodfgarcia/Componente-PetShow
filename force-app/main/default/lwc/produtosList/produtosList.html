@@ -1,0 +1,40 @@
+<template>
+
+	<lightning-card title="Adicionar um Produto a Lista" icon-name="standard:record">
+		<div class="slds-m-around_medium">
+			<lightning-record-edit-form object-api-name="Product2" onsuccess={handleSuccess}>
+
+				<p>
+					<lightning-input-field field-name="Name"></lightning-input-field>
+				</p>
+				<p>
+					<lightning-input-field field-name="ProductCode"></lightning-input-field>
+				</p>
+				<p>
+					<lightning-input-field field-name="Description" ></lightning-input-field>
+				</p>
+				<p>
+					<lightning-input-field field-name="Family" ></lightning-input-field>
+				</p>
+
+				<br/>
+				<p>
+					<lightning-button label="Limpar" onclick={handleReset}></lightning-button>
+					<lightning-button label="Adicionar Item" type="submit" variant="brand"></lightning-button>
+				</p>
+
+			</lightning-record-edit-form>
+		</div>
+
+	</lightning-card>
+
+	<lightning-card title="Lista de produtos" icon-name="standard:record">
+		<div class="slds-m-around_medium">
+
+			<lightning-datatable key-field="id" data={produtos} columns={columns} hide-checkbox-column>
+			</lightning-datatable>
+
+		</div>
+	</lightning-card>
+
+</template>
